@@ -13,7 +13,7 @@ document.querySelector("#app").innerHTML = `<main class="shell" data-theme="ligh
 <section class="group"><div class="label"><span>3D \u65CB\u8F6C\u901F\u5EA6</span><span id="rotationVal">0.50\xD7</span></div><input id="rotation" type="range" min="-200" max="200" value="50"><p class="note">0 \u505C\u6B62\u65CB\u8F6C\uFF1B\u8D1F\u503C\u53CD\u5411\u65CB\u8F6C\u3002\u62D6\u52A8\u753B\u9762\u4ECD\u53EF\u624B\u52A8\u8C03\u6574\u89C6\u89D2\u3002</p></section>
 <section class="group"><div class="label"><span>\u5B57\u7B26\u5927\u5C0F</span><span id="cellVal">7 px</span></div><input id="cell" type="range" min="5" max="20" value="7"></section>
 <section class="group"><div class="label"><span>\u5B57\u7B26\u5BC6\u5EA6</span><span id="densityVal">60%</span></div><input id="density" type="range" min="0" max="100" value="60"><p class="note">\u5BC6\u5EA6\u53EA\u6539\u53D8\u5B57\u7B26\u8986\u76D6\u91CF\uFF0C\u4E0D\u6539\u53D8\u5B57\u7B26\u5C3A\u5BF8\u548C\u7F51\u683C\u5206\u8FA8\u7387\u3002</p></section>
-<section class="group"><div class="label"><span>\u5BF9\u6BD4\u5EA6</span><span id="contrastVal">0.50</span></div><input id="contrast" type="range" min="40" max="500" value="50"></section>
+<section class="group"><div class="label"><span>\u5BF9\u6BD4\u5EA6</span><span id="contrastVal">0.85</span></div><input id="contrast" type="range" min="40" max="500" value="85"></section>
 <section class="group"><div class="label"><span>\u566A\u70B9</span><span id="noiseVal">8%</span></div><input id="noise" type="range" min="0" max="100" value="8"></section>
 <section class="group"><div class="label"><span>\u56FE\u7247\u5B57\u7B26\u52A8\u753B</span><span id="imageAnimationVal">\u6570\u5B57\u7011\u5E03</span></div><select id="imageAnimation"><option value="1" selected>\u6570\u5B57\u7011\u5E03</option><option value="2">\u6CE2\u6D6A\u8109\u51B2</option><option value="3">\u626B\u63CF\u7EBF</option><option value="4">\u6570\u5B57\u6545\u969C</option><option value="0">\u5173\u95ED\u52A8\u753B</option></select><div class="label" style="margin-top:13px"><span>\u52A8\u753B\u5F3A\u5EA6</span><span id="imageAnimationStrengthVal">45%</span></div><input id="imageAnimationStrength" type="range" min="0" max="100" value="45"><p class="note">\u4EC5\u5728\u56FE\u7247\u6A21\u5F0F\u4E0B\u751F\u6548\uFF0C\u539F\u59CB\u56FE\u7247\u4FDD\u6301\u9759\u6B62\uFF0C\u52A8\u753B\u53EA\u9A71\u52A8\u5B57\u7B26\u5C42\u3002</p></section>
 <section class="group"><div class="label"><span>3D \u6DF1\u5EA6\u5B57\u7B26</span><span id="depthStrengthVal">90%</span></div><input id="depthStrength" type="range" min="0" max="100" value="90"><p class="note">\u6839\u636E\u5F53\u524D\u6A21\u578B\u7684\u5B9E\u9645\u8FD1\u8FDC\u8868\u9762\u81EA\u9002\u5E94\u63D0\u53D6\u6DF1\u5EA6\u3001\u8FB9\u7F18\u548C\u5C40\u90E8\u66F2\u7387\uFF0C0% \u6062\u590D\u4E3A\u7EAF\u5149\u7167\u6620\u5C04\u3002</p></section>
@@ -408,7 +408,7 @@ postMat.uniforms.charColor.value.set("#7c4dff");
 postMat.uniforms.charColorEnd.value.set("#19dfff");
 postMat.uniforms.bgColor.value.set("#070812");
 postMat.uniforms.cell.value = 7;
-postMat.uniforms.contrast.value = 0.5;
+postMat.uniforms.contrast.value = 0.85;
 postMat.fragmentShader = postMat.fragmentShader.replace("uniform vec3 charColor,charColorEnd,bgColor;", "uniform vec3 charColor,charColorMid,charColorEnd,bgColor;").replace("vec3 gradientColor=mix(charColor,charColorEnd,gt);", "vec3 gradientColor=gt<.5?mix(charColor,charColorMid,gt*2.):mix(charColorMid,charColorEnd,(gt-.5)*2.);");
 const asciiTarget = new THREE.WebGLRenderTarget(1, 1, { format: THREE.RGBAFormat });
 const bloomScene = new THREE.Scene(), bloomCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
@@ -820,7 +820,7 @@ function updateCanvasTone(color) {
   const value = color.replace("#", ""), r = parseInt(value.slice(0, 2), 16), g = parseInt(value.slice(2, 4), 16), b = parseInt(value.slice(4, 6), 16), luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
   viewport.dataset.canvasTone = luminance > 0.58 ? "light" : "dark";
 }
-const palettes = { neon: ["#7c4dff", "#ff2fb3", "#19dfff"], plasma: ["#ff304f", "#ff8a00", "#ffe600"], toxic: ["#bbff00", "#00ff85", "#00d9ff"], ice: ["#ffffff", "#72e5ff", "#607cff"] };
+const palettes = { neon: ["#7c4dff", "#ff2fb3", "#19dfff"], plasma: ["#ff304f", "#ff8a00", "#ffe600"], toxic: ["#bbff00", "#00ff85", "#00d9ff"], ice: ["#143dcc", "#5b2ac7", "#b0189d"] };
 function applyColors(colors, background) {
   colors.forEach((color, index) => {
     const id = ["charColor", "charColorMid", "charColorEnd"][index], input = document.querySelector("#" + id);

@@ -93,7 +93,7 @@ html,body,#app{margin:0;width:100%;height:100%;overflow:hidden;background:#f1f1e
 .paletteGrid button:nth-child(1){background:linear-gradient(90deg,#7c4dff,#ff2fb3,#19dfff)}
 .paletteGrid button:nth-child(2){background:linear-gradient(90deg,#ff1744,#ff8a00,#ffd600)}
 .paletteGrid button:nth-child(3){background:linear-gradient(90deg,#39ff14,#b8ff00,#00ffc8)}
-.paletteGrid button:nth-child(4){background:linear-gradient(90deg,#255cff,#65d9ff,#f1ffff)}
+.paletteGrid button:nth-child(4){background:linear-gradient(90deg,#143dcc,#5b2ac7,#b0189d)}
 .paletteGrid button.selected{outline:2px solid var(--text);outline-offset:2px}
 #canvasScheme{display:none}
 .schemeDots{display:flex;align-items:center;justify-content:flex-start;gap:14px;padding:4px 3px;overflow:visible}
