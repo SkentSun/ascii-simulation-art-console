@@ -4,6 +4,8 @@ A browser-based realtime ASCII renderer for 3D models, images, SVGs and video. I
 
 > 开源说明：本项目源于一篇 ASCII 网站效果素材帖，在社区反馈推动下用周末 vibecoding 完成，现以 MIT 协议开源，供大家自由取用与二次创作。
 
+▶ **Live Demo:** https://skentsun.github.io/ascii-simulation-art-console/
+
 ## Highlights
 
 - GLB/GLTF rendering with automatic fitting, rotation, pan and zoom
