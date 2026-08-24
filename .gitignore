@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+release/
+*.zip
+
+# Keep only the current distributable single-file build.
+outputs/*
+!outputs/ascii-media-lab-single/
+outputs/ascii-media-lab-single/*
+!outputs/ascii-media-lab-single/index.html
