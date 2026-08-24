@@ -1,6 +1,8 @@
-# ASCII Simulation Art Console
+# ASCII Simulation Art Console · ASCII 艺术模拟器
 
 A browser-based realtime ASCII renderer for 3D models, images, SVGs and video. It converts media into a configurable character field and can export still images, WebM recordings, or an embeddable Web Component.
+
+> 开源说明：本项目源于一篇 ASCII 网站效果素材帖，在社区反馈推动下用周末 vibecoding 完成，现以 MIT 协议开源，供大家自由取用与二次创作。
 
 ## Highlights
 
@@ -103,7 +105,9 @@ src/default-image.svg    Bundled default SVG
 src/default-video.mp4    Bundled default video
 src/project-icon.jpg     Navigation and favicon artwork
 docs/TECHNICAL_RECAP.md  Detailed implementation review
-docs/SOCIAL_POST.md      Publish-ready social copy
+docs/SOCIAL_WECHAT.md     微信公众号长文（含 Vibecoding 故事线）
+docs/SOCIAL_XIAOHONGSHU.md  小红书种草文案
+docs/SOCIAL_DOUYIN.md    抖音配文（非口播）
 LICENSE                  MIT license
 ```
 
