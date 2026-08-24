@@ -105,9 +105,6 @@ src/default-image.svg    Bundled default SVG
 src/default-video.mp4    Bundled default video
 src/project-icon.jpg     Navigation and favicon artwork
 docs/TECHNICAL_RECAP.md  Detailed implementation review
-docs/SOCIAL_WECHAT.md     微信公众号长文（含 Vibecoding 故事线）
-docs/SOCIAL_XIAOHONGSHU.md  小红书种草文案
-docs/SOCIAL_DOUYIN.md    抖音配文（非口播）
 LICENSE                  MIT license
 ```
 
