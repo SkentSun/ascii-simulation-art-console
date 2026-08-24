@@ -2,6 +2,7 @@
   "name": "ascii-media-lab",
   "version": "1.0.0",
   "description": "Realtime ASCII renderer for 3D models, images, SVG and video.",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {
