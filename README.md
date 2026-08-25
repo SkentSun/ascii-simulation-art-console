@@ -119,6 +119,6 @@ LICENSE                  MIT license
 
 ## License
 
-Released under the [MIT License](LICENSE).
+By Skent (@SkentSun) — released under the [MIT License](LICENSE).
 
 The MIT license covers the project source code. Before redistributing bundled or user-supplied media, verify that you have the appropriate rights for those assets.
